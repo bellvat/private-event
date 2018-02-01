@@ -1,0 +1,9 @@
+<h2> This is your profile,
+  <%= @user.name %>!
+</h2>
+<h3> These are your created events </h3>
+<ul>
+  <% @user_events.each do |u| %>
+    <li> <%= u %> </li>
+  <% end %>
+</ul>

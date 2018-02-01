@@ -1,0 +1,17 @@
+<div class='container'>
+  <h1> Its Private! </h1>
+  <%= link_to 'Home', '#' %>
+  <%= link_to 'User', '#' %>
+  <%= link_to 'Bookings', '#' %>
+  
+  <% if !@current_user.nil? %>
+    <h2>Welcome, <%= @current_user.name %> </h2>
+  <% else %>
+    <h2> why no current user? <%= @current_user.inspect %> </h2>
+  <% end %>
+
+  <% flash.each do |error,message| %>
+    <%= message %>
+  <%end%>
+
+</div>
