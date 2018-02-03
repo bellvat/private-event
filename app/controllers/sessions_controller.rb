@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(name: params[:session][:name])
 
     if !@user.nil?
-      session[:current_user_id]= @user.id
+      log_in(@user)
       flash[:success] = "Login successful"
       redirect_to user_path(session[:current_user_id])
     else

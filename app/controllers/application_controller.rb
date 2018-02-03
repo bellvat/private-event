@@ -5,7 +5,12 @@ class ApplicationController < ActionController::Base
     @current_user = User.find_by_id(session[:current_user_id])
   end
 
-  def logged_in(user)
-    user.id = session[:current_user_id]
+  def log_in(user)
+    session[:current_user_id] = user.id
+  end
+
+  def signed_in(user)
+    set_current_user
+    user.id == @current_user.id
   end
 end

@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201192301) do
+ActiveRecord::Schema.define(version: 20180202222013) do
 
   create_table "created_events", force: :cascade do |t|
-    t.integer "created_event_id"
+    t.integer "event_id"
     t.integer "creator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

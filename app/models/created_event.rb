@@ -1,4 +1,4 @@
 class CreatedEvent < ApplicationRecord
-  belongs_to :creators, class_name :'User'
-  belongs_to :events, class_name :'Event'
+  belongs_to :creator, :class_name => 'User'
+  belongs_to :event, :class_name =>'Event'
 end
