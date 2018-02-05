@@ -1,5 +1,7 @@
 <%= form_for(:events, url: events_path) do |f| %>
   <%= f.label :location %>
   <%= f.text_field :location %>
+  <%= f.date_field :e_date %>
+
   <%= f.submit 'Create new place!' %>
 <% end %>

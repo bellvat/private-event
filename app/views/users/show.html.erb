@@ -7,3 +7,21 @@
     <li> <%= e.location %> </li>
   <% end %>
 </ul>
+
+<% if !@past_events.nil? %>
+  <h3> These are your past events </h3>
+  <ul>
+    <% @past_events.each do |e| %>
+      <li> <%= e.location %>  Date: <%= e.e_date %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if !@future_events.nil? %>
+  <h3> These are your upcoming events </h3>
+  <ul>
+    <% @future_events.each do |e| %>
+      <li> <%= e.location %>  Date: <%= e.e_date %> </li>
+    <% end %>
+  </ul>
+<% end %>

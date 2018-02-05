@@ -16,7 +16,9 @@ before_action :correct_user?, only:[:show]
 
   def show
     @user = User.find_by_id(params[:id])
-    @user_events = @user.events
+    @user_events = @user.events.all
+    @past_events = @user.attended_events.where("e_date < :today",{today: Date.today.to_s})
+    @future_events = @user.attended_events.where("e_date > :today",{today: Date.today.to_s})
 
   end
 

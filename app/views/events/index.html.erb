@@ -1,4 +1,12 @@
-<h2> These are all current events! <br/>
-  <% @events.each do |e| %>
-    <%= e.location %>
+<h2> These are upcoming events! <br/>
+  <ul>
+  <% Event.upcoming.each do |e| %>
+    <li><%= link_to e.location, event_path(e.id) %></li>
   <% end %>
+  </ul>
+<h2> These are past events! <br/>
+  <ul>
+  <% Event.past.each do |e| %>
+    <li><%= link_to e.location, event_path(e.id) %></li>
+  <% end %>
+  </ul>

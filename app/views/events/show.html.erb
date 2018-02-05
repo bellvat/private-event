@@ -1,4 +1,15 @@
 <h2> This is the event detail:
   <br/>
-  <%= @event.location %>
+  <h4> Location: <%= @event.location%>
+  <br/>
+  Date: <%= @event.e_date%>
+  </h4>
 </h2>
+<h2> These are the people attending:
+  <ul>
+    <% @event_attendees.each do |a| %>
+      <li> <%= a.name %> </li>
+    <% end %>
+</h2>
+<h2>Would you like to join the event? </h2>
+<%= button_to 'Yes',{ action: "join", id: @event.id } %>
