@@ -5,7 +5,7 @@
   <% if !@current_user.nil? %>
     <h2>Welcome, <%= @current_user.name %> &#9786; </h2>
     <%= link_to 'User', user_path(@current_user.id) %>
-    <%= link_to 'Sign out', '#' %>
+    <%= link_to 'Sign out', session_path(@current_user), method: :delete %>
   <% end %>
 
   <% flash.each do |error,message| %>
